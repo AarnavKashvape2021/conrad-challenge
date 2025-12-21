@@ -1,0 +1,118 @@
+{
+  "site": {
+    "title": "Your Innovation Project",
+    "subtitle": "A Conrad Challenge Innovation Stage Project",
+    "logo": "assets/logo.png"
+  },
+  "navigation": {
+    "items": [
+      { "label": "Home", "href": "index.html" },
+      { "label": "Innovation", "href": "innovation.html" },
+      { "label": "Impact", "href": "impact.html" },
+      { "label": "Team", "href": "team.html" }
+    ]
+  },
+  "home": {
+    "hero": {
+      "title": "Innovative Solution Title",
+      "subtitle": "A brief, compelling tagline that captures your innovation",
+      "image": "assets/hero-image.jpg",
+      "ctaText": "Learn More",
+      "ctaLink": "innovation.html"
+    },
+    "problem": {
+      "title": "The Problem",
+      "description": "Describe the problem your innovation addresses. Explain why this problem matters and who it affects. Be clear and compelling about the challenges that exist today."
+    },
+    "innovation": {
+      "title": "Our Innovation",
+      "summary": "Provide a concise overview of your solution. Explain what makes it innovative and how it addresses the problem. Keep this section engaging and accessible to judges who may not be experts in your field."
+    }
+  },
+  "innovation": {
+    "overview": {
+      "title": "Overview",
+      "description": "Provide a detailed overview of your innovation. Explain the core concept, the technology or approach you're using, and what sets it apart from existing solutions."
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "description": "Explain the mechanics of your solution. Break down the process step-by-step or describe the key components. Use clear, accessible language that helps judges understand your innovation."
+    },
+    "features": [
+      {
+        "title": "Feature One",
+        "description": "Describe the first key feature or benefit of your innovation."
+      },
+      {
+        "title": "Feature Two",
+        "description": "Describe the second key feature or benefit of your innovation."
+      },
+      {
+        "title": "Feature Three",
+        "description": "Describe the third key feature or benefit of your innovation."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "assets/gallery/image1.jpg",
+        "caption": "Caption for image 1"
+      },
+      {
+        "image": "assets/gallery/image2.jpg",
+        "caption": "Caption for image 2"
+      },
+      {
+        "image": "assets/gallery/image3.jpg",
+        "caption": "Caption for image 3"
+      }
+    ]
+  },
+  "impact": {
+    "targetUsers": {
+      "title": "Target Users",
+      "description": "Describe who will benefit from your innovation. Be specific about demographics, communities, or groups that will use or be affected by your solution."
+    },
+    "impactDescription": {
+      "title": "Impact",
+      "description": "Explain the positive impact your innovation will have. Discuss both immediate and long-term effects. Consider social, environmental, economic, or other relevant impacts."
+    },
+    "comparison": {
+      "title": "Improvement Over Existing Solutions",
+      "description": "Compare your innovation to existing solutions or approaches. Highlight what makes your solution better, more efficient, more accessible, or more effective. Use clear, factual comparisons."
+    }
+  },
+  "team": {
+    "overview": {
+      "title": "Our Team",
+      "description": "Introduce your team. Explain how you came together, what each member brings to the project, and why your team is well-positioned to bring this innovation to life."
+    },
+    "members": [
+      {
+        "name": "Team Member One",
+        "role": "Role/Title",
+        "photo": "assets/team/member1.jpg",
+        "bio": "Brief bio or contribution description"
+      },
+      {
+        "name": "Team Member Two",
+        "role": "Role/Title",
+        "photo": "assets/team/member2.jpg",
+        "bio": "Brief bio or contribution description"
+      },
+      {
+        "name": "Team Member Three",
+        "role": "Role/Title",
+        "photo": "assets/team/member3.jpg",
+        "bio": "Brief bio or contribution description"
+      }
+    ]
+  },
+  "footer": {
+    "text": "© 2024 Conrad Challenge Innovation Stage Project",
+    "links": [
+      { "label": "Privacy Policy", "url": "#" },
+      { "label": "Contact", "url": "#" }
+    ]
+  }
+}
+

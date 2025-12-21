@@ -1,0 +1,9 @@
+# Assets Directory
+
+Place your images and media files here:
+- Hero images: `assets/hero-image.jpg`
+- Gallery images: `assets/gallery/`
+- Team photos: `assets/team/`
+
+Update the paths in `content/content.json` to match your file names.
+

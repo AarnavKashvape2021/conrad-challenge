@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Instructions</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .method {
+            margin: 2rem 0;
+            padding: 1rem;
+            border-left: 4px solid #2563eb;
+            background: #f9fafb;
+        }
+        h2 {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 How to Test Your Website</h1>
+    
+    <p><strong>Important:</strong> You need to run a local server because browsers block loading JSON files directly from <code>file://</code> URLs.</p>
+
+    <div class="method">
+        <h2>Method 1: Python (Easiest - Works on Windows/Mac/Linux)</h2>
+        <p>If you have Python installed:</p>
+        <pre># Python 3 (most common)
+python -m http.server 8000
+
+# Or Python 2
+python -m SimpleHTTPServer 8000</pre>
+        <p>Then open: <code>http://localhost:8000</code></p>
+    </div>
+
+    <div class="method">
+        <h2>Method 2: Node.js (if you have Node installed)</h2>
+        <pre># Install http-server globally (one time)
+npm install -g http-server
+
+# Run the server
+http-server -p 8000</pre>
+        <p>Then open: <code>http://localhost:8000</code></p>
+    </div>
+
+    <div class="method">
+        <h2>Method 3: VS Code Live Server Extension</h2>
+        <ol>
+            <li>Install "Live Server" extension in VS Code</li>
+            <li>Right-click on <code>index.html</code></li>
+            <li>Select "Open with Live Server"</li>
+        </ol>
+    </div>
+
+    <div class="method">
+        <h2>Method 4: PHP (if you have PHP installed)</h2>
+        <pre>php -S localhost:8000</pre>
+        <p>Then open: <code>http://localhost:8000</code></p>
+    </div>
+
+    <h2>✅ What to Check</h2>
+    <ul>
+        <li>Navigation menu appears and links work</li>
+        <li>Content loads from <code>content.json</code></li>
+        <li>Images show (or placeholders if images don't exist)</li>
+        <li>All pages are accessible</li>
+        <li>Mobile responsive (resize browser window)</li>
+    </ul>
+
+    <h2>🐛 Troubleshooting</h2>
+    <p><strong>Content not loading?</strong> Open browser console (F12) and check for errors. Make sure you're using <code>http://localhost</code> not <code>file://</code></p>
+    
+    <p><strong>JSON errors?</strong> Validate your <code>content/content.json</code> at <a href="https://jsonlint.com" target="_blank">jsonlint.com</a></p>
+</body>
+</html>
+
