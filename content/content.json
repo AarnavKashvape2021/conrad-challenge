@@ -1,118 +1,115 @@
 {
   "site": {
-    "title": "Your Innovation Project",
+    "title": "Electrodynamic Tether Deorbiting System",
     "subtitle": "A Conrad Challenge Innovation Stage Project",
     "logo": "assets/logo.png"
   },
   "navigation": {
     "items": [
-      { "label": "Home", "href": "index.html" },
-      { "label": "Innovation", "href": "innovation.html" },
-      { "label": "Impact", "href": "impact.html" },
-      { "label": "Team", "href": "team.html" }
+      {
+        "label": "Home",
+        "href": "index.html"
+      },
+      {
+        "label": "Innovation",
+        "href": "innovation.html"
+      },
+      {
+        "label": "Story",
+        "href": "impact.html"
+      },
+      {
+        "label": "Team",
+        "href": "team.html"
+      }
     ]
   },
   "home": {
     "hero": {
-      "title": "Innovative Solution Title",
-      "subtitle": "A brief, compelling tagline that captures your innovation",
+      "title": "Propellant-Free Satellite Deorbiting",
+      "subtitle": "Using Earth's magnetic field to safely remove satellites from orbit",
       "image": "assets/hero-image.jpg",
       "ctaText": "Learn More",
       "ctaLink": "innovation.html"
     },
     "problem": {
       "title": "The Problem",
-      "description": "Describe the problem your innovation addresses. Explain why this problem matters and who it affects. Be clear and compelling about the challenges that exist today."
+      "description": "Low Earth Orbit is becoming increasingly congested with defunct satellites and debris that pose collision risks to active spacecraft. Many small satellites lack sufficient fuel, mass margin, or system complexity to perform reliable end-of-life deorbiting, leading to uncontrolled decay or long-term orbital pollution. Current propulsion-based solutions add cost, weight, and failure points, making responsible deorbiting difficult to standardize—especially for small and cost-sensitive missions."
     },
     "innovation": {
       "title": "Our Innovation",
-      "summary": "Provide a concise overview of your solution. Explain what makes it innovative and how it addresses the problem. Keep this section engaging and accessible to judges who may not be experts in your field."
+      "summary": "We propose a compact electrodynamic tether deorbiting system with a mechanically simple, dual-redundant deployment mechanism. Designed specifically for reliability and minimal mass, our system enables passive, fuel-free deorbiting at the end of a satellite’s mission, making responsible orbital disposal accessible to a wider range of spacecraft."
+    }
+  },
+  "story": {
+    "mission": {
+      "title": "Mission",
+      "description": "Our mission is to make safe and reliable satellite deorbiting a standard practice by developing a propellant-free electrodynamic tether system that operates using fundamental physics rather than consumable resources. By prioritizing simplicity, redundancy, and reliability, we aim to provide an end-of-life solution that satellite operators can trust—reducing orbital debris, preventing collisions, and preserving the long-term sustainability of Earth’s orbital environment."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "We envision a future where every satellite launched into orbit includes a dependable, low-risk deorbiting mechanism by design. In this future, Earth’s orbits remain usable, safe, and accessible for scientific, commercial, and humanitarian missions without the growing threat of debris accumulation."
+    },
+    "values": {
+      "title": "Values",
+      "description": "We are guided by responsibility toward the space environment, engineering simplicity over unnecessary complexity, and reliability through thoughtful redundancy. We value solutions rooted in physics, designed for real-world constraints, and built to serve the long-term interests of both space operators and society."
     }
   },
   "innovation": {
     "overview": {
       "title": "Overview",
-      "description": "Provide a detailed overview of your innovation. Explain the core concept, the technology or approach you're using, and what sets it apart from existing solutions."
+      "description": "Our innovation is an electrodynamic tether–based deorbiting system designed for small satellites. Once deployed, the conductive tether interacts with Earth’s magnetic field to generate a Lorentz force that gradually reduces orbital energy, enabling controlled atmospheric reentry without the use of propellant. The system is lightweight, passive after deployment, and engineered for high reliability."
     },
     "howItWorks": {
       "title": "How It Works",
-      "description": "Explain the mechanics of your solution. Break down the process step-by-step or describe the key components. Use clear, accessible language that helps judges understand your innovation."
+      "description": "When the conductive tether is deployed from the satellite, it moves through Earth’s magnetic field at orbital velocity. This motion induces an electric current along the tether, which in turn experiences a Lorentz force opposing the satellite’s direction of motion. This force continuously removes orbital energy, lowering the satellite’s altitude over time until it safely reenters the atmosphere and burns up."
     },
     "features": [
       {
-        "title": "Feature One",
-        "description": "Describe the first key feature or benefit of your innovation."
+        "title": "Propellant-Free Deorbiting",
+        "description": "Uses Earth’s magnetic field instead of fuel, eliminating mass penalties and propulsion system complexity."
       },
       {
-        "title": "Feature Two",
-        "description": "Describe the second key feature or benefit of your innovation."
+        "title": "Dual-Redundant Deployment",
+        "description": "A spring-based mechanical deployment system with redundancy ensures reliable tether release even in the event of partial failure."
       },
       {
-        "title": "Feature Three",
-        "description": "Describe the third key feature or benefit of your innovation."
+        "title": "Low Mass and Passive Operation",
+        "description": "Designed for small satellites, the system requires minimal power and operates passively after deployment."
       }
     ],
-    "gallery": [
-      {
-        "image": "assets/gallery/image1.jpg",
-        "caption": "Caption for image 1"
-      },
-      {
-        "image": "assets/gallery/image2.jpg",
-        "caption": "Caption for image 2"
-      },
-      {
-        "image": "assets/gallery/image3.jpg",
-        "caption": "Caption for image 3"
-      }
-    ]
-  },
-  "impact": {
-    "targetUsers": {
-      "title": "Target Users",
-      "description": "Describe who will benefit from your innovation. Be specific about demographics, communities, or groups that will use or be affected by your solution."
-    },
-    "impactDescription": {
-      "title": "Impact",
-      "description": "Explain the positive impact your innovation will have. Discuss both immediate and long-term effects. Consider social, environmental, economic, or other relevant impacts."
-    },
-    "comparison": {
-      "title": "Improvement Over Existing Solutions",
-      "description": "Compare your innovation to existing solutions or approaches. Highlight what makes your solution better, more efficient, more accessible, or more effective. Use clear, factual comparisons."
-    }
   },
   "team": {
     "overview": {
       "title": "Our Team",
-      "description": "Introduce your team. Explain how you came together, what each member brings to the project, and why your team is well-positioned to bring this innovation to life."
+      "description": "We are a student-led team driven by a shared interest in space engineering and sustainability. Our combined skills span physics, electronics, mechanical design, and systems thinking, enabling us to approach orbital debris mitigation with both technical rigor and practical awareness."
     },
     "members": [
       {
         "name": "Team Member One",
-        "role": "Role/Title",
+        "role": "Systems & Physics",
         "photo": "assets/team/member1.jpg",
-        "bio": "Brief bio or contribution description"
+        "bio": "Focused on orbital mechanics, electrodynamics, and overall system integration."
       },
       {
         "name": "Team Member Two",
-        "role": "Role/Title",
+        "role": "Mechanical Design",
         "photo": "assets/team/member2.jpg",
-        "bio": "Brief bio or contribution description"
-      },
-      {
-        "name": "Team Member Three",
-        "role": "Role/Title",
-        "photo": "assets/team/member3.jpg",
-        "bio": "Brief bio or contribution description"
+        "bio": "Responsible for the tether deployment mechanism and structural reliability."
       }
     ]
   },
   "footer": {
     "text": "© 2024 Conrad Challenge Innovation Stage Project",
     "links": [
-      { "label": "Privacy Policy", "url": "#" },
-      { "label": "Contact", "url": "#" }
+      {
+        "label": "Privacy Policy",
+        "url": "#"
+      },
+      {
+        "label": "Contact",
+        "url": "#"
+      }
     ]
   }
 }
-
