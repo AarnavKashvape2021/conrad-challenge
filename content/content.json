@@ -86,16 +86,16 @@
     },
     "members": [
       {
-        "name": "Team Member One",
-        "role": "Systems & Physics",
-        "photo": "assets/team/member1.jpg",
-        "bio": "Focused on orbital mechanics, electrodynamics, and overall system integration."
+        "name": "Amaay Gupta",
+        "role": "Systems Architecture & Strategy",
+        "photo": "assets/team/amaay.jpg",
+        "bio": "Leads failure-mode analysis, validation logic, and adoption-focused system design aligned with regulatory and mission risk requirements."
       },
       {
-        "name": "Team Member Two",
-        "role": "Mechanical Design",
-        "photo": "assets/team/member2.jpg",
-        "bio": "Responsible for the tether deployment mechanism and structural reliability."
+        "name": "Arnav",
+        "role": "Engineering & Implementation",
+        "photo": "assets/team/arnav.jpg",
+        "bio": "Translates system requirements into executable designs across physics, CAD, electronics, and deployment mechanisms."
       }
     ]
   },
