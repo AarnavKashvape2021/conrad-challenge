@@ -2,35 +2,24 @@
   "site": {
     "title": "Electrodynamic Tether Deorbiting System",
     "subtitle": "A Conrad Challenge Innovation Stage Project",
-    "logo": "assets/logo.png"
+    "logo": "assets/logo.jpeg"
   },
   "navigation": {
     "items": [
-      {
-        "label": "Home",
-        "href": "index.html"
-      },
-      {
-        "label": "Innovation",
-        "href": "innovation.html"
-      },
-      {
-        "label": "Story",
-        "href": "impact.html"
-      },
-      {
-        "label": "Team",
-        "href": "team.html"
-      }
+      { "label": "Home", "href": "index.html" },
+      { "label": "Innovation", "href": "innovation.html" },
+      { "label": "Resources", "href": "resources.html" },
+      { "label": "Team", "href": "team.html" },
+      { "label": "Story", "href": "impact.html" }
     ]
   },
   "home": {
     "hero": {
-      "title": "Propellant-Free Satellite Deorbiting",
-      "subtitle": "Using Earth's magnetic field to safely remove satellites from orbit",
-      "image": "assets/hero-image.jpg",
+      "title": "Electrodynamic Tether Deorbiting System",
+      "subtitle": "USing Earth's Magnetic Field to safely remove EOL satellites from orbit",
       "ctaText": "Learn More",
-      "ctaLink": "innovation.html"
+      "ctaLink": "innovation.html",
+      "image": "assets/system-diagram.jpg"
     },
     "problem": {
       "title": "The Problem",
@@ -39,20 +28,6 @@
     "innovation": {
       "title": "Our Innovation",
       "summary": "We propose a compact electrodynamic tether deorbiting system with a mechanically simple, dual-redundant deployment mechanism. Designed specifically for reliability and minimal mass, our system enables passive, fuel-free deorbiting at the end of a satellite’s mission, making responsible orbital disposal accessible to a wider range of spacecraft."
-    }
-  },
-  "story": {
-    "mission": {
-      "title": "Mission",
-      "description": "Our mission is to make safe and reliable satellite deorbiting a standard practice by developing a propellant-free electrodynamic tether system that operates using fundamental physics rather than consumable resources. By prioritizing simplicity, redundancy, and reliability, we aim to provide an end-of-life solution that satellite operators can trust—reducing orbital debris, preventing collisions, and preserving the long-term sustainability of Earth’s orbital environment."
-    },
-    "vision": {
-      "title": "Vision",
-      "description": "We envision a future where every satellite launched into orbit includes a dependable, low-risk deorbiting mechanism by design. In this future, Earth’s orbits remain usable, safe, and accessible for scientific, commercial, and humanitarian missions without the growing threat of debris accumulation."
-    },
-    "values": {
-      "title": "Values",
-      "description": "We are guided by responsibility toward the space environment, engineering simplicity over unnecessary complexity, and reliability through thoughtful redundancy. We value solutions rooted in physics, designed for real-world constraints, and built to serve the long-term interests of both space operators and society."
     }
   },
   "innovation": {
@@ -79,6 +54,76 @@
       }
     ]
   },
+  "story": {
+    "mission": {
+      "title": "Mission",
+      "description": "Our mission is to make safe and reliable satellite deorbiting a standard practice by developing a propellant-free electrodynamic tether system that operates using fundamental physics rather than consumable resources. By prioritizing simplicity, redundancy, and reliability, we aim to provide an end-of-life solution that satellite operators can trust—reducing orbital debris, preventing collisions, and preserving the long-term sustainability of Earth’s orbital environment."
+    },
+    "vision": {
+      "title": "Vision",
+      "description": "We envision a future where every satellite launched into orbit includes a dependable, low-risk deorbiting mechanism by design. In this future, Earth’s orbits remain usable, safe, and accessible for scientific, commercial, and humanitarian missions without the growing threat of debris accumulation."
+    },
+    "values": {
+      "title": "Values",
+      "description": "We are guided by responsibility toward the space environment, engineering simplicity over unnecessary complexity, and reliability through thoughtful redundancy. We value solutions rooted in physics, designed for real-world constraints, and built to serve the long-term interests of both space operators and society."
+    }
+  },
+  "resources": {
+    "pageTitle": "Additional Resources",
+    "description": "Explore our supplementary materials, including flowcharts, system architecture, and more.",
+    "items": [
+      {
+        "title": "Failure Modes Analysis and Effects",
+        "description": "A comprehensive document summarizing the possible failure modes and their effects.",
+        "type": "document",
+        "file": "assets/D_FMEA.pdf",
+        "thumbnail": "#"
+      },
+      {
+        "title": "System Architecture flowchart",
+        "description": "A flowchart summarizing the system architecture.",
+        "type": "image",
+        "file": "assets/system-diagram.jpg",
+        "thumbnail": "assets/system-diagram.jpg"
+      },
+      {
+        "title": "Electronics control flowchart",
+        "description": "A flowchart summarizing the electronics control system.",
+        "type": "image",
+        "file": "assets/electronics-control-flowchart.jpg",
+        "thumbnail": "assets/electronics-control-flowchart.jpg"
+      },
+      {
+        "title": "CAD model",
+        "description": "Static CAD used to validate volumetric feasibility, restraint geometry, and door clearance. Model is not intended to represent final kinematics.",
+        "type": "image",
+        "file": "assets/cad-model.png",
+        "thumbnail": "assets/cad-model.png"
+      },
+      {
+        "title": "Adoption barrier map",
+        "description": "A table summarizing the previous adoption barriers for EDTs which the system tries to address.",
+        "type": "document",
+        "file": "assets/file2.pdf",
+        "thumbnail": "#"
+      },
+      {
+        "title": "References",
+        "description": "A document summarizing the references used in the project.",
+        "type": "document",
+        "file": "assets/References.pdf",
+        "thumbnail": "#"
+      }
+      ,
+      {
+        "title": "All Project Documents (Google Drive)",
+        "description": "A shared Google Drive folder containing the project documents: Failure Modes Analysis (FMEA), System Architecture flowchart, Electronics control flowchart, CAD model images, Adoption barrier map, and References. See the folder for full-resolution files and source documents.",
+        "type": "link",
+        "file": "https://drive.google.com/drive/folders/1BHNq1UQVeD6bD7iSCCJ4x3FMQNA4fl-a?usp=sharing",
+        "thumbnail": "#"
+      }
+    ]
+  },
   "team": {
     "overview": {
       "title": "Our Team",
@@ -92,7 +137,7 @@
         "bio": "Leads failure-mode analysis, validation logic, and adoption-focused system design aligned with regulatory and mission risk requirements."
       },
       {
-        "name": "Arnav",
+        "name": "Aarnav Kashyape",
         "role": "Engineering & Implementation",
         "photo": "assets/team/arnav.jpg",
         "bio": "Translates system requirements into executable designs across physics, CAD, electronics, and deployment mechanisms."
@@ -100,7 +145,7 @@
     ]
   },
   "footer": {
-    "text": "© 2024 Conrad Challenge Innovation Stage Project",
+    "text": "© 2026 Conrad Challenge Innovation Stage Project",
     "links": [
       {
         "label": "Privacy Policy",

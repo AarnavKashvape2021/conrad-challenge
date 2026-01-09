@@ -95,6 +95,19 @@ a:hover {
     color: var(--text-primary);
 }
 
+.site-logo {
+    height: 36px;
+    width: auto;
+    margin-right: 0.75rem;
+    vertical-align: middle;
+    border-radius: 4px;
+}
+
+.site-title {
+    vertical-align: middle;
+    font-weight: 600;
+}
+
 .navbar-menu {
     display: flex;
     list-style: none;
@@ -422,6 +435,25 @@ a:hover {
 
 .footer-text {
     color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-logo {
+    height: 28px;
+    width: auto;
+    border-radius: 4px;
 }
 
 .footer-links {

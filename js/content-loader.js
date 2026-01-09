@@ -10,28 +10,81 @@
 
 let contentData = null;
 
+// Embedded fallback content (used when fetching content/content.json fails,
+// e.g., when opening files directly without a local server).
+const FALLBACK_CONTENT = {
+    "site": {
+        "title": "Electrodynamic Tether Deorbiting System",
+        "subtitle": "A Conrad Challenge Innovation Stage Project",
+        "logo": "assets/logo.jpeg"
+    },
+    "navigation": {
+        "items": [
+            { "label": "Home", "href": "index.html" },
+            { "label": "Innovation", "href": "innovation.html" },
+            { "label": "Resources", "href": "resources.html" },
+            { "label": "Team", "href": "team.html" },
+            { "label": "Impact", "href": "impact.html" }
+        ]
+    },
+    "innovation": {
+        "overview": {
+            "title": "Overview",
+            "description": "Our innovation is an electrodynamic tether–based deorbiting system designed for small satellites. Once deployed, the conductive tether interacts with Earth’s magnetic field to generate a Lorentz force that gradually reduces orbital energy, enabling controlled atmospheric reentry without the use of propellant. The system is lightweight, passive after deployment, and engineered for high reliability."
+        },
+        "howItWorks": {
+            "title": "How It Works",
+            "description": "When the conductive tether is deployed from the satellite, it moves through Earth’s magnetic field at orbital velocity. This motion induces an electric current along the tether, which in turn experiences a Lorentz force opposing the satellite’s direction of motion. This force continuously removes orbital energy, lowering the satellite’s altitude over time until it safely reenters the atmosphere and burns up."
+        },
+        "features": [
+            { "title": "Propellant-Free Deorbiting", "description": "Uses Earth’s magnetic field instead of fuel, eliminating mass penalties and propulsion system complexity." },
+            { "title": "Dual-Redundant Deployment", "description": "A spring-based mechanical deployment system with redundancy ensures reliable tether release even in the event of partial failure." },
+            { "title": "Low Mass and Passive Operation", "description": "Designed for small satellites, the system requires minimal power and operates passively after deployment." }
+        ]
+    },
+    "resources": {
+        "pageTitle": "Additional Resources",
+        "description": "Explore our supplementary materials, including flowcharts, system architecture, and more.",
+        "items": [
+            { "title": "Failure Modes Analysis and Effects", "description": "A comprehensive document summarizing the possible failure modes and their effects.", "type": "document", "file": "assets/D_FMEA.pdf", "thumbnail": "#" },
+            { "title": "System Architecture flowchart", "description": "A flowchart summarizing the system architecture.", "type": "image", "file": "assets/system-diagram.jpg", "thumbnail": "assets/system-diagram.jpg" },
+            { "title": "Electronics control flowchart", "description": "A flowchart summarizing the electronics control system.", "type": "image", "file": "assets/electronics-control-flowchart.jpg", "thumbnail": "assets/electronics-control-flowchart.jpg" },
+            { "title": "CAD model", "description": "Static CAD used to validate volumetric feasibility, restraint geometry, and door clearance. Model is not intended to represent final kinematics.", "type": "image", "file": "assets/cad-model.png", "thumbnail": "assets/cad-model.png" },
+            { "title": "Adoption barrier map", "description": "A table summarizing the previous adoption barriers for EDTs which the system tries to address.", "type": "document", "file": "assets/file2.pdf", "thumbnail": "#" },
+            { "title": "References", "description": "A document summarizing the references used in the project.", "type": "document", "file": "assets/References.pdf", "thumbnail": "#" }
+        ]
+    },
+    "team": {
+        "overview": { "title": "Our Team", "description": "We are a student-led team driven by a shared interest in space engineering and sustainability. Our combined skills span physics, electronics, mechanical design, and systems thinking, enabling us to approach orbital debris mitigation with both technical rigor and practical awareness." },
+        "members": [
+            { "name": "Amaay Gupta", "role": "Systems Architecture & Strategy", "photo": "assets/team/amaay.jpg", "bio": "Leads failure-mode analysis, validation logic, and adoption-focused system design aligned with regulatory and mission risk requirements." },
+            { "name": "Arnav", "role": "Engineering & Implementation", "photo": "assets/team/arnav.jpg", "bio": "Translates system requirements into executable designs across physics, CAD, electronics, and deployment mechanisms." }
+        ]
+    },
+    "footer": { "text": "© 2026 Conrad Challenge Innovation Stage Project", "links": [ { "label": "Privacy Policy", "url": "#" }, { "label": "Contact", "url": "#" } ] }
+};
 /**
  * Load content from JSON file
  */
 async function loadContent() {
     try {
-        const response = await fetch('content/content.json');
-        if (!response.ok) {
-            throw new Error(`Failed to load content: ${response.statusText}`);
+        // Add a cache-busting query param to ensure we get a fresh copy
+        const url = `content/content.json?_=${Date.now()}`;
+        const response = await fetch(url, { cache: 'no-store' });
+        if (response.status >= 400) {
+            // Fall back to embedded content if fetching fails
+            console.warn(`Failed to fetch content/content.json (${response.status}). Using embedded fallback.`);
+            contentData = FALLBACK_CONTENT;
+            return contentData;
         }
         contentData = await response.json();
         return contentData;
     } catch (error) {
         console.error('Error loading content:', error);
-        // Fallback: show error message
-        document.body.innerHTML = `
-            <div style="padding: 2rem; text-align: center;">
-                <h1>Content Loading Error</h1>
-                <p>Unable to load content/content.json</p>
-                <p style="color: #666; font-size: 0.875rem;">${error.message}</p>
-            </div>
-        `;
-        return null;
+        // Fallback to embedded content so the site still renders when fetch is blocked
+        console.warn('Using embedded fallback content.');
+        contentData = FALLBACK_CONTENT;
+        return contentData;
     }
 }
 
@@ -53,7 +106,7 @@ function populateContent() {
     document.querySelectorAll('[data-content]').forEach(element => {
         const path = element.getAttribute('data-content');
         const value = getNestedValue(contentData, path);
-        
+
         if (value !== undefined && value !== null) {
             if (element.tagName === 'IMG') {
                 element.src = value;
@@ -109,7 +162,10 @@ function renderNavigation() {
 
     navbar.innerHTML = `
         <div class="container">
-            <div class="navbar-logo">${contentData.site?.title || 'Project'}</div>
+            <div class="navbar-logo">
+                <img src="${contentData.site?.logo || 'assets/logo.jpeg'}" alt="Logo" class="site-logo" onerror="this.src='assets/logo.jpeg'">
+                <span class="site-title">${contentData.site?.title || 'Project'}</span>
+            </div>
             <button class="navbar-toggle" id="nav-toggle" aria-label="Toggle menu">☰</button>
             <ul class="navbar-menu" id="nav-menu">
                 ${nav.items.map(item => `
@@ -144,8 +200,11 @@ function renderFooter() {
 
     const footerData = contentData.footer;
     footer.innerHTML = `
-        <div class="container">
-            <div class="footer-text">${footerData.text || ''}</div>
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <img src="${contentData.site?.logo || 'assets/logo.jpeg'}" alt="Logo" class="footer-logo" onerror="this.src='assets/logo.jpeg'">
+                <div class="footer-text">${footerData.text || ''}</div>
+            </div>
             ${footerData.links && footerData.links.length > 0 ? `
                 <ul class="footer-links">
                     ${footerData.links.map(link => `
@@ -218,6 +277,32 @@ function renderTeam() {
 }
 
 /**
+ * Render resources list
+ */
+function renderResources() {
+    if (!contentData?.resources) return;
+
+    const container = document.getElementById('resources-container');
+    if (!container) return;
+
+    // Find a single external link resource (e.g., Google Drive) if present
+    const items = contentData.resources.items || [];
+    const linkItem = items.find(i => i.type === 'link' || (i.file && /^https?:\/\//.test(i.file)));
+
+    // Render a centered description and a prominent link button
+    const description = contentData.resources.description || '';
+    const linkUrl = linkItem?.file || '#';
+    const linkLabel = linkItem?.title || 'Open Project Documents';
+
+    container.innerHTML = `
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;gap:1rem;">
+            <div style="max-width:800px;text-align:center;color:var(--text-secondary);">${description}</div>
+            <a class="btn btn-primary" href="${linkUrl}" target="_blank" rel="noopener noreferrer">${linkLabel}</a>
+        </div>
+    `;
+}
+
+/**
  * Initialize content loading and rendering
  */
 async function initContent() {
@@ -229,6 +314,7 @@ async function initContent() {
         renderFeatures();
         renderGallery();
         renderTeam();
+        renderResources();
     }
 }
 
